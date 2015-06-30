@@ -75,6 +75,14 @@ If you don't want to do that, you can go the MinGW (http://www.mingw.org/) route
 
 Yes polling. The initial implementation attempted to use `watchdog` to recieve file update events. However, besides the initial creation of the log files, no events are fired in a timely fashion.
 
+### Fun Ideas
+
+I wrote this as a basis of another project. However I have thought of some other things that this could be used for:
+
+# Watch for keywords (mentions) and provide toast/growl notifications
+# Accumulate chat frequency statistics
+# Stream chat to a central server (away-from-eve reading)
+
 ### Unit tests & comments
 
 I will be working on test coverage and code documentation shortly.

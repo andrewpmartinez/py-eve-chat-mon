@@ -65,3 +65,6 @@ The `msg` dictionary that is passed into the handler has the following attribute
 
 The monitor starts its own polling thread as a daemon (meaning it will stay running as long as the main thread is running). It can be stopped by calling `monitor.stop()` and restarted again by `monitor.start()`.
 
+### Unit tests & comments
+
+I will be working on test coverage and code documentation shortly.

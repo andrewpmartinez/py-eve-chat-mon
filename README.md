@@ -67,7 +67,7 @@ The monitor starts its own polling thread as a daemon (meaning it will stay runn
 
 ### mmh3
 
-You will need to be able to compile C packages. If you are on Windows, the easiest way is to install Visual Studio Community Edition (free) and then ensure you set your `VS1000COMNTOOLS` environment variable to C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools. Where 12.0 may change based on which version of Visual Studio is out (i.e. 2013 = 12.0 and the next will be 13.0, etc).
+You will need to be able to compile C packages. If you are on Windows, the easiest way is to install Visual Studio Community Edition (free) and then ensure you set your `VS1000COMNTOOLS` environment variable to `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools`; where 12.0 may change based on which version of Visual Studio is out (i.e. 2013 = 12.0 and the next will be 13.0, etc).
 
 If you don't want to do that, you can go the MinGW (http://www.mingw.org/) route. I leave that to the reader to research.
 

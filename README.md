@@ -44,11 +44,11 @@ A library that focuses on monitoring EVE Online chat logs for messages and doing
 ```
 The monitor initializer takes in four arguments:
 
-- `chats` - A list of chats it should monitor
-- `path` - A path to the EVE chat log directory (The default is in the current user's documents folder)
+- `chats` - A `list` of chats it should monitor
+- `path` - A `str` path to the EVE chat log directory (The default is in the current user's documents folder)
 - `handler` - A callable handler (i.e. a function or any other object that supports the __call__ attribute) that accepts two arguments
- - `chat` - The string name of the chat that received a message
- - `msg` - A dictionary representing the chat message
+ - `chat` - The `str` name of the chat that received a message
+ - `msg` - A `dict` representing the chat message
 - `poll_rate` - An optional `int` that represents the seconds to wait between polling intervals on the chat logs. A higher values reduces the responsiveness but lightens the load on the local machines disk I/O
 
 The `msg` dictionary that is passed into the handler has the following attributes:

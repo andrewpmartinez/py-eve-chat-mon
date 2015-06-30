@@ -79,9 +79,9 @@ Yes polling. The initial implementation attempted to use `watchdog` to recieve f
 
 I wrote this as a basis of another project. However I have thought of some other things that this could be used for:
 
-# Watch for keywords (mentions) and provide toast/growl notifications
-# Accumulate chat frequency statistics
-# Stream chat to a central server (away-from-eve reading)
+ - Watch for keywords (mentions) and provide toast/growl notifications
+ - Accumulate chat frequency statistics
+ - Stream chat to a central server (away-from-eve reading)
 
 ### Unit tests & comments
 

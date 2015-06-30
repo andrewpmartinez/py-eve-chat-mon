@@ -65,6 +65,12 @@ The `msg` dictionary that is passed into the handler has the following attribute
 
 The monitor starts its own polling thread as a daemon (meaning it will stay running as long as the main thread is running). It can be stopped by calling `monitor.stop()` and restarted again by `monitor.start()`.
 
+### mmh3
+
+You will need to be able to compile C packages. If you are on Windows, the easiest way is to install Visual Studio Community Edition (free) and then ensure you set your ``VS1000COMNTOOLS``` environment variable to C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools. Where 12.0 may change based on which version of Visual Studio is out (i.e. 2013 = 12.0 and the next will be 13.0, etc).
+
+If you don't want to do that, you can go the MinGW (http://www.mingw.org/) route. I leave that to the reader to research.
+
 ### Polling?
 
 Yes polling. The initial implementation attempted to use `watchdog` to recieve file update events. However, besides the initial creation of the log files, no events are fired in a timely fashion.

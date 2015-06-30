@@ -5,8 +5,7 @@ and lightweight library that does one thing well.
 
 ### To Install
 
-```pip install py-eve-chat-mon
-```
+`pip install py-eve-chat-mon`
 
 ### Quick-Start
 

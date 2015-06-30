@@ -44,7 +44,7 @@ A library that focuses on monitoring EVE Online chat logs for messages and doing
 ```
 The monitor initializer takes in four arguments:
 
-- `chats` - A `list` of chats it should monitor
+- `chats` - A `list` of `str` chats that should be monitored
 - `path` - A `str` path to the EVE chat log directory (The default is in the current user's documents folder)
 - `handler` - A callable handler (i.e. a function or any other object that supports the __call__ attribute) that accepts two arguments
  - `chat` - The `str` name of the chat that received a message
@@ -64,6 +64,10 @@ The `msg` dictionary that is passed into the handler has the following attribute
     monitor.start()
 
 The monitor starts its own polling thread as a daemon (meaning it will stay running as long as the main thread is running). It can be stopped by calling `monitor.stop()` and restarted again by `monitor.start()`.
+
+### Polling?
+
+Yes polling. The initial implementation attempted to use `watchdog` to recieve file update events. However, besides the initial creation of the log files, no events are fired in a timely fashion.
 
 ### Unit tests & comments
 

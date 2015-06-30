@@ -37,10 +37,10 @@ A library that focuses on monitoring EVE Online chat logs for messages and doing
     monitor = Monitor(chats, path, handler, poll_rate=2)
 
 ```
-    monitor = Monitor(['Alliance', 'Corp'], 
-              "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", 
-              handler, 
-              5)
+monitor = Monitor(['Alliance', 'Corp'], 
+          "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", 
+          handler, 
+          5)
 ```
 The monitor initializer takes in four arguments:
 

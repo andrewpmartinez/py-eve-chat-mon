@@ -57,7 +57,7 @@ The `msg` dictionary that is passed into the handler has the following attribute
 - `message` - A `str` representing the message portion of the chat log (i.e. just the text the user typed)
 - `line` - A `str` representing the entire chat log line (including un-parsed timestamp, username, etc.
 - `username` - A `str` representing the username of the user who sent the message
-- `hash` - An `int` that uniquely identified this string. It is generated from the MurmurHash3 algorithm (via the package mmh3)
+- `hash` - An `int` that uniquely identified this string. It is generated from the MurmurHash3 algorithm (via the package mmh3). The hash is created from the `message` attribute.
 
 #### Start the monitor
 

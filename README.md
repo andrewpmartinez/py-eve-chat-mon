@@ -1,7 +1,6 @@
 # Python Eve Chat Monitoring
 
-Library that focuses on monitoring EVE Online chat logs for messages and doing nothing else. It is meant to be a focused
-and lightweight library that does one thing well.
+A library that focuses on monitoring EVE Online chat logs for messages and doing nothing else. It is meant to be focused and lightweight.
 
 ### To Install
 

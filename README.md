@@ -17,7 +17,9 @@ and lightweight library that does one thing well.
         print(msg)
     
     if __name__ == "__main__":
-        monitor = Monitor(['Alliance', 'Corp'], "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", handler)
+        monitor = Monitor(['Alliance', 'Corp'], 
+                          "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", 
+                          handler)
         monitor.start()
     
         try:
@@ -33,10 +35,14 @@ and lightweight library that does one thing well.
 
 #### Instantiate a Monitor
 
-```monitor = Monitor(chats, path, handler, poll_rate=2)```
+    monitor = Monitor(chats, path, handler, poll_rate=2)
 
-```monitor = Monitor(['Alliance', 'Corp'], "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", handler, 5)```
-
+```
+    monitor = Monitor(['Alliance', 'Corp'], 
+              "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", 
+              handler, 
+              5)
+```
 The monitor initializer takes in four arguments:
 
 - `chats` - A list of chats it should monitor

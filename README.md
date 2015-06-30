@@ -65,6 +65,10 @@ The `msg` dictionary that is passed into the handler has the following attribute
 
 The monitor starts its own polling thread as a daemon (meaning it will stay running as long as the main thread is running). It can be stopped by calling `monitor.stop()` and restarted again by `monitor.start()`.
 
+### UTF-16
+
+It is worth noting that Eve's chat logs are in UTF-16. As such messages and text in there can cause issues if you are attempting to print it out to the console in Windows and there happens to be characters outside the consoles supported code points (Unicode charmap errors). You can get around this a little bit by setting the code page in the console to UTF-8 support (run `chcp 65001`), but it isn't perfect.
+
 ### mmh3
 
 You will need to be able to compile C packages. If you are on Windows, the easiest way is to install Visual Studio Community Edition (free) and then ensure you set your `VS1000COMNTOOLS` environment variable to `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools`; where 12.0 may change based on which version of Visual Studio is out (i.e. 2013 = 12.0 and the next will be 13.0, etc).

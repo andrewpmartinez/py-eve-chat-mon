@@ -5,11 +5,8 @@ class EveChatMonException(Exception):
         Attributes:
             message -- An explanation of the error
     """
-    message = None
-
     def __init__(self, message):
-        self.message = message
-
+        super(EveChatMonException, self).__init__(message)
 
 class InvalidChatDirectory(EveChatMonException):
     """Exception raised when the supplied path to Eve's chat log directory is invalid.
@@ -19,13 +16,14 @@ class InvalidChatDirectory(EveChatMonException):
             message -- An explanation of the error
     """
     def __init__(self, path, message):
+        super(InvalidChatDirectory, self).__init__(message)
         self.path = path
-        self.message = message
 
 class InvalidCallable(EveChatMonException):
     """Exception raised when a supplied argument does not support __call__"""
-    pass
+    def __init__(self):
+        super(InvalidChatDirectory, self).__init__("Supplied object is not a callable; does not support __call__")
 
-
-
-
+class InvalidMonitorState(EveChatMonException):
+    def __init__(self, message):
+        super(InvalidMonitorState, self).__init__(message)

@@ -1,4 +1,5 @@
 import unittest.mock
+from os import path
 from unittest import TestCase, mock
 from py_eve_chat_mon.monitor import Monitor
 from py_eve_chat_mon.exceptions import InvalidChatDirectory, InvalidMonitorState
@@ -8,7 +9,7 @@ class TestMonitor(TestCase):
     def setUp(self):
         self._chats = ['Alliance', 'Corp']
         self._valid_path = "."
-        self._invalid_path = "C:\\I\\Wont\\Exist\\Ever\\123756544\\"
+        self._invalid_path = path.join(".", "I", "wont", "exist", "ever", "123")
         self._handler = unittest.mock.MagicMock(return_value=None)
         self._poll_rate = 0
 

@@ -94,5 +94,6 @@ I wrote this as a basis of another project. However I have thought of some other
 
 ### Unit tests
 
-![Release Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=master "Release/Master")
-![Develop Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=develop "Develop")
+Release/Master: ![Release Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=master "Release/Master")
+
+Develop: ![Develop Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=develop "Develop")

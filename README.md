@@ -90,3 +90,4 @@ I wrote this as a basis of another project. However I have thought of some other
 ### Unit tests & comments
 
 I will be working on test coverage and code documentation shortly.
+Edit: Some added already!

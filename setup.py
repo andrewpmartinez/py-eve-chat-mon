@@ -12,7 +12,7 @@ def read(fname):
 
 setup(
     name="py-eve-chat-mon",
-    version="0.1",
+    version="0.2",
     author="Andrew Martinez",
     author_email="andrew.p.martinez@gmail.com",
     install_requires=[

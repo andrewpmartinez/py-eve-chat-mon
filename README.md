@@ -1,3 +1,5 @@
+Release/Master: ![Release Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=master "Release/Master") Develop: ![Develop Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=develop "Develop")
+
 # Python Eve Chat Monitoring
 
 A library that focuses on monitoring EVE Online chat logs for messages and doing nothing else. It is meant to be focused and lightweight.

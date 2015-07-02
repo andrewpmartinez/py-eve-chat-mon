@@ -3,7 +3,7 @@ import re
 from datetime import datetime
 
 def parse_msg(msg):
-    line_parser = re.compile('^\s*\[\s(.*?)\s\]\s(.*?)\s>\s(.*?)$')
+    line_parser = re.compile('^\s*\[\s(.*?)\s\]\s(.*?)\s>\s(.*?)$', re.DOTALL)
     match = line_parser.match(msg)
     if match:
         timestamp = match.group(1)

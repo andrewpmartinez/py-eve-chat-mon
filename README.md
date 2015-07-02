@@ -2,7 +2,7 @@
 
 A library that focuses on monitoring EVE Online chat logs for messages and doing nothing else. It is meant to be focused and lightweight.
 
-# Python Version Support
+### Python Version Support
 
 Python 3.3.x
 Python 3.4.x
@@ -13,35 +13,37 @@ Python 3.4.x
 
 ### Quick-Start
 
-    import time
-    from py_eve_chat_mon.monitor import Monitor
-    
-    def handler(chat, msg):
-        print(chat)
-        print(msg)
-    
-    if __name__ == "__main__":
-        monitor = Monitor(['Alliance', 'Corp'], 
-                          "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", 
-                          handler)
-        monitor.start()
-    
-        try:
-            while True:
-                time.sleep(1)
-        except KeyboardInterrupt:
-            monitor.stop()
-    
-        exit()
+```python
+import time
+from py_eve_chat_mon.monitor import Monitor
 
+def handler(chat, msg):
+    print(chat)
+    print(msg)
+
+if __name__ == "__main__":
+    monitor = Monitor(['Alliance', 'Corp'], 
+                      "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", 
+                      handler)
+    monitor.start()
+
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        monitor.stop()
+
+    exit()
+```
 
 ### Detailed Start
 
 #### Instantiate a Monitor
-
-    monitor = Monitor(chats, path, handler, poll_rate=2)
-
+```python
+monitor = Monitor(chats, path, handler, poll_rate=2)
 ```
+
+```python
 monitor = Monitor(['Alliance', 'Corp'], 
           "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", 
           handler, 

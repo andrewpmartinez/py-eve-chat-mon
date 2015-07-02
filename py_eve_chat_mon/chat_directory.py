@@ -7,11 +7,11 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 def get_timestamp_from_file_name(file_name):
-    chat_file_timestamp_parser = re.compile('_(\d{8}_\d{6})\.txt$')
+    chat_file_timestamp_parser = re.compile('.*?_(\d{8}_\d{6})\.txt$')
     matches = chat_file_timestamp_parser.match(file_name)
 
     if matches:
-        return datetime.strptime(matches.group(1), "%Y%m%d_%H:%M:%S")
+        return datetime.strptime(matches.group(1), "%Y%m%d_%H%M%S")
 
     return None
 
@@ -27,11 +27,19 @@ def get_chat_from_file_name(file_name):
 
 
 def get_existing_logs(path):
+    if not os.path.exists(path):
+        raise InvalidChatDirectory(path, "The path '{0}' does not exist.".format(path))
+
+    if not os.path.isdir(path):
+        raise InvalidChatDirectory(path,
+                                   "The path '{0}' does not point to a directory.".format(path))
+
     existing_chat_logs = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
 
     existing_chats = {}
 
     for file_name in existing_chat_logs:
+        print(file_name)
         chat_name = get_chat_from_file_name(file_name)
         timestamp = get_timestamp_from_file_name(file_name)
 

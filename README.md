@@ -2,6 +2,11 @@
 
 A library that focuses on monitoring EVE Online chat logs for messages and doing nothing else. It is meant to be focused and lightweight.
 
+# Python Version Support
+
+Python 3.3.x
+Python 3.4.x
+
 ### To Install
 
 `pip install py-eve-chat-mon`
@@ -87,7 +92,10 @@ I wrote this as a basis of another project. However I have thought of some other
  - Accumulate chat frequency statistics
  - Stream chat to a central server (away-from-eve reading)
 
-### Unit tests & comments
+### Unit tests
+
+Release/Master: https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=master
+Develop: https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=develop
 
 I will be working on test coverage and code documentation shortly.
 Edit: Some added already!

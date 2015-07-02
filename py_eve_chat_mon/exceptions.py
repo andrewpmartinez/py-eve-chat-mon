@@ -28,3 +28,7 @@ class InvalidCallable(EveChatMonException):
 class InvalidMonitorState(EveChatMonException):
     def __init__(self, message):
         super(InvalidMonitorState, self).__init__(message)
+
+class ObserverAlreadyAdded(EveChatMonException):
+    def __init__(self):
+        super(ObserverAlreadyAdded, self).__init__("File monitor already initialized")

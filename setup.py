@@ -18,12 +18,12 @@ setup(
     install_requires=[
         reqs
     ],
-    description=("A python library that monitors 1-n Eve chat logs and publishes events when specific message types are detected. Message types include regular-expression matches and system intel reports."),
+    description=("A library that focuses on monitoring EVE Online chat logs for messages and doing nothing else. It is meant to be focused and lightweight."),
     license="MIT",
     keywords="EVE chat monitor",
     url='https://github.com/andrewpmartinez/py-eve-chat-mon',
-    download_url='https://github.com/andrewpmartinez/py-eve-chat-mon/tarball/0.1',
+    download_url='https://github.com/andrewpmartinez/py-eve-chat-mon/tarball/0.2',
     packages=find_packages(),
-    long_description=read('README.md'),
+    long_description="See github account for details.",
     classifiers=[],
 )

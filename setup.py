@@ -6,10 +6,6 @@ from pip.req import parse_requirements
 install_reqs = parse_requirements(os.path.join(os.path.dirname(__file__), 'requirements.txt'))
 reqs = [str(ir.req) for ir in install_reqs]
 
-
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
-
 setup(
     name="py-eve-chat-mon",
     version="0.2",
@@ -22,8 +18,14 @@ setup(
     license="MIT",
     keywords="EVE chat monitor",
     url='https://github.com/andrewpmartinez/py-eve-chat-mon',
-    download_url='https://github.com/andrewpmartinez/py-eve-chat-mon/tarball/0.1',
+    download_url='https://github.com/andrewpmartinez/py-eve-chat-mon/tarball/0.2',
     packages=find_packages(),
-    long_description=read('README.md'),
-    classifiers=[],
+    long_description="See github page for full details.",
+    classifiers=[
+        'Development Status :: 5 - Production/Stable'
+        'License :: OSI Approved :: MIT License'
+        'Natural Language :: English'
+        'Programming Language :: Python :: 3 :: Only'
+        'Topic :: Software Development :: Libraries'
+    ],
 )

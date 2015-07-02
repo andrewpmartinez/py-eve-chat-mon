@@ -94,8 +94,5 @@ I wrote this as a basis of another project. However I have thought of some other
 
 ### Unit tests
 
-Release/Master: https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=master
-Develop: https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=develop
-
-I will be working on test coverage and code documentation shortly.
-Edit: Some added already!
+![Release Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=master "Release/Master")
+![Develop Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=develop "Develop")

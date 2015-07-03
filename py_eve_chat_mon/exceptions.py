@@ -21,9 +21,14 @@ class InvalidChatDirectory(EveChatMonException):
 
 class InvalidCallable(EveChatMonException):
     """Exception raised when a supplied argument does not support __call__"""
-    def __init__(self):
-        super(InvalidChatDirectory, self).__init__("Supplied object is not a callable; does not support __call__")
+    def __init__(self, message):
+        super(InvalidCallable, self).__init__(message)
+
 
 class InvalidMonitorState(EveChatMonException):
     def __init__(self, message):
         super(InvalidMonitorState, self).__init__(message)
+
+class ObserverAlreadyAdded(EveChatMonException):
+    def __init__(self):
+        super(ObserverAlreadyAdded, self).__init__("File monitor already initialized")

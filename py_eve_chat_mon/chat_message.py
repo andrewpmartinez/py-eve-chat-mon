@@ -1,6 +1,10 @@
-import mmh3
 import re
 from datetime import datetime
+from hashlib import md5
+
+def hash(str):
+    return md5.hash(message).hexdigest()
+
 
 def parse_msg(msg):
     line_parser = re.compile('^\s*\[\s(.*?)\s\]\s(.*?)\s>\s(.*?)$', re.DOTALL)
@@ -9,7 +13,7 @@ def parse_msg(msg):
         timestamp = match.group(1)
         username = match.group(2)
         message = match.group(3)
-        message_hash = mmh3.hash(message)
+        message_hash = hash(message)
         timestamp = datetime.strptime(timestamp, "%Y.%m.%d %H:%M:%S")
 
         parsed_msg = {"timestamp": timestamp,

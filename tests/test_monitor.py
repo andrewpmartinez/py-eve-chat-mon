@@ -141,3 +141,13 @@ class TestMonitor(TestCase):
                  unittest.mock.call(self._chats[1], "p3"), unittest.mock.call(self._chats[1], "p4")]
 
         self._handler.assert_has_calls(calls)
+
+    def test_should_poll_is_false_if_is_alive_is_false(self):
+        self._sut.is_alive = False
+
+        self.assertFalse(self._sut._should_poll())
+
+    def test_should_poll_is_true_if_is_alive_is_true(self):
+        self._sut.is_alive = True
+
+        self.assertTrue(self._sut._should_poll())

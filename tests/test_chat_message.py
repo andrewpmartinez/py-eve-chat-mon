@@ -1,5 +1,5 @@
 from unittest import TestCase, mock
-from unittest.mock import MagicMock, Mock, call
+from unittest.mock import MagicMock, call
 from datetime import datetime
 from py_eve_chat_mon.chat_message import parse_msg, EveChatLogReader
 
@@ -23,9 +23,9 @@ class TestParseMsg(TestCase):
         result = parse_msg("asdfasdf asldkfj alksdfj ;alskdfj")
         self.assertIsNone(result)
 
-    @mock.patch('py_eve_chat_mon.chat_message.mmh3.hash')
-    def test_parse_msg_parses_single_line_msg(self, mock_mmh3):
-        mock_mmh3.return_value = "10"
+    @mock.patch('py_eve_chat_mon.chat_message.hash')
+    def test_parse_msg_parses_single_line_msg(self, mock_md5):
+        mock_md5.return_value = "10"
         result = parse_msg(MESSAGE_SINGLE_LINE)
 
         self.assertEqual(datetime(2015, 3, 5, 21, 4, 3), result['timestamp'])
@@ -34,9 +34,9 @@ class TestParseMsg(TestCase):
         self.assertEqual(MESSAGE_SINGLE_LINE, result['line'])
         self.assertEqual("10", result['hash'])
 
-    @mock.patch('py_eve_chat_mon.chat_message.mmh3.hash')
-    def test_parse_msg_parses_multi_line_msg(self, mock_mmh3):
-        mock_mmh3.return_value = "10"
+    @mock.patch('py_eve_chat_mon.chat_message.hash')
+    def test_parse_msg_parses_multi_line_msg(self, mock_md5):
+        mock_md5.return_value = "10"
         result = parse_msg(MESSAGE_MULTI_LINE)
 
         self.assertEqual(datetime(2015, 3, 5, 21, 4, 3), result['timestamp'])
@@ -45,13 +45,13 @@ class TestParseMsg(TestCase):
         self.assertEqual(MESSAGE_MULTI_LINE, result['line'])
         self.assertEqual("10", result['hash'])
 
-    @mock.patch('py_eve_chat_mon.chat_message.mmh3.hash')
-    def test_parse_calls_mmh3_with_proper_msg(self, mock_mmh3):
+    @mock.patch('py_eve_chat_mon.chat_message.hash')
+    def test_parse_calls_md5_with_proper_msg(self, mock_md5):
         line = "[ 2015.03.05 21:04:03 ] Some Dude > MSG\nON NEXT LINE\nANOTHER LINE"
 
         parse_msg(line)
 
-        mock_mmh3.assert_called_with("MSG\nON NEXT LINE\nANOTHER LINE")
+        mock_md5.assert_called_with("MSG\nON NEXT LINE\nANOTHER LINE")
 
 class TestEveChatLogReader(TestCase):
 

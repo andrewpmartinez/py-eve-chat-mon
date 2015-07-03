@@ -78,10 +78,6 @@ The monitor starts its own polling thread as a daemon (meaning it will stay runn
 
 It is worth noting that Eve's chat logs are in UTF-16. As such messages and text in there can cause issues if you are attempting to print it out to the console in Windows and there happens to be characters outside the consoles supported code points (Unicode charmap errors). You can get around this a little bit by setting the code page in the console to UTF-8 support (run `chcp 65001`), but it isn't perfect.
 
-### mmh3
-
-You will need to be able to compile C packages. Linux will have no issues with this (yay) if you have the standard developer tools installed. If you are on Windows, the easiest way is to install Visual Studio Community Edition (free) and then ensure you set your `VS1000COMNTOOLS` environment variable to `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools`; where 12.0 may change based on which version of Visual Studio is out (i.e. 2013 = 12.0 and the next will be 13.0, etc). If you don't want to do that, you can go the MinGW (http://www.mingw.org/) route. I leave that to the reader to research.
-
 ### Polling?
 
 Yes polling. The initial implementation attempted to use `watchdog` to recieve file update events. However, besides the initial creation of the log files, no events are fired in a timely fashion.

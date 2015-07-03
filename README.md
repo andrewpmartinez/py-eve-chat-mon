@@ -1,8 +1,10 @@
+Release/Master: ![Release Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=master "Release/Master") Develop: ![Develop Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=develop "Develop")
+
 # Python Eve Chat Monitoring
 
 A library that focuses on monitoring EVE Online chat logs for messages and doing nothing else. It is meant to be focused and lightweight.
 
-# Python Version Support
+### Python Version Support
 
 Python 3.3.x
 Python 3.4.x
@@ -13,35 +15,37 @@ Python 3.4.x
 
 ### Quick-Start
 
-    import time
-    from py_eve_chat_mon.monitor import Monitor
-    
-    def handler(chat, msg):
-        print(chat)
-        print(msg)
-    
-    if __name__ == "__main__":
-        monitor = Monitor(['Alliance', 'Corp'], 
-                          "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", 
-                          handler)
-        monitor.start()
-    
-        try:
-            while True:
-                time.sleep(1)
-        except KeyboardInterrupt:
-            monitor.stop()
-    
-        exit()
+```python
+import time
+from py_eve_chat_mon.monitor import Monitor
 
+def handler(chat, msg):
+    print(chat)
+    print(msg)
+
+if __name__ == "__main__":
+    monitor = Monitor(['Alliance', 'Corp'], 
+                      "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", 
+                      handler)
+    monitor.start()
+
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        monitor.stop()
+
+    exit()
+```
 
 ### Detailed Start
 
 #### Instantiate a Monitor
-
-    monitor = Monitor(chats, path, handler, poll_rate=2)
-
+```python
+monitor = Monitor(chats, path, handler, poll_rate=2)
 ```
+
+```python
 monitor = Monitor(['Alliance', 'Corp'], 
           "C:\\Users\\YourName\\Documents\\EVE\\logs\\Chatlogs\\", 
           handler, 
@@ -76,9 +80,7 @@ It is worth noting that Eve's chat logs are in UTF-16. As such messages and text
 
 ### mmh3
 
-You will need to be able to compile C packages. If you are on Windows, the easiest way is to install Visual Studio Community Edition (free) and then ensure you set your `VS1000COMNTOOLS` environment variable to `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools`; where 12.0 may change based on which version of Visual Studio is out (i.e. 2013 = 12.0 and the next will be 13.0, etc).
-
-If you don't want to do that, you can go the MinGW (http://www.mingw.org/) route. I leave that to the reader to research.
+You will need to be able to compile C packages. Linux will have no issues with this (yay) if you have the standard developer tools installed. If you are on Windows, the easiest way is to install Visual Studio Community Edition (free) and then ensure you set your `VS1000COMNTOOLS` environment variable to `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools`; where 12.0 may change based on which version of Visual Studio is out (i.e. 2013 = 12.0 and the next will be 13.0, etc). If you don't want to do that, you can go the MinGW (http://www.mingw.org/) route. I leave that to the reader to research.
 
 ### Polling?
 
@@ -93,6 +95,9 @@ I wrote this as a basis of another project. However I have thought of some other
  - Stream chat to a central server (away-from-eve reading)
 
 ### Unit tests
+Unit tests are run on every commit via [Travis-CI](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon)
 
-![Release Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=master "Release/Master")
-![Develop Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=develop "Develop")
+Release/Master: ![Release Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=master "Release/Master")
+
+
+Develop: ![Develop Status](https://travis-ci.org/andrewpmartinez/py-eve-chat-mon.svg?branch=develop "Develop")

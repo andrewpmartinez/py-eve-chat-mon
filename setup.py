@@ -24,10 +24,10 @@ setup(
     package_data={'': ['requirements.txt']},
     long_description="See github page for full details.",
     classifiers=[
-        'Development Status :: 5 - Production/Stable'
-        'License :: OSI Approved :: MIT License'
-        'Natural Language :: English'
-        'Programming Language :: Python :: 3 :: Only'
+        'Development Status :: 5 - Production/Stable',
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Programming Language :: Python :: 3 :: Only',
         'Topic :: Software Development :: Libraries'
     ],
 )

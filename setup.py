@@ -1,11 +1,4 @@
-import os
-import uuid
 from setuptools import setup, find_packages
-from pip.req import parse_requirements
-
-# parse_requirements() returns generator of pip.req.InstallRequirement objects
-install_reqs = parse_requirements(os.path.join(os.path.dirname(__file__), 'requirements.txt'), session=uuid.uuid1())
-reqs = [str(ir.req) for ir in install_reqs]
 
 setup(
     name="py-eve-chat-mon",
@@ -13,7 +6,7 @@ setup(
     author="Andrew Martinez",
     author_email="andrew.p.martinez@gmail.com",
     install_requires=[
-        reqs
+        "watchdog==0.8.3"
     ],
     description=("A library that focuses on monitoring EVE Online chat logs for messages and doing nothing else. It is meant to be focused and lightweight."),
     license="MIT",
@@ -28,5 +21,5 @@ setup(
         'Natural Language :: English',
         'Programming Language :: Python :: 3 :: Only',
         'Topic :: Software Development :: Libraries'
-    ],
+    ]
 )

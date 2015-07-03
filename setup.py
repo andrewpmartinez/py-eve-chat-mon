@@ -14,7 +14,7 @@ setup(
     url='https://github.com/andrewpmartinez/py-eve-chat-mon',
     download_url='https://github.com/andrewpmartinez/py-eve-chat-mon/tarball/0.',
     packages=find_packages(),
-    long_description="See github page for full details.",4
+    long_description="See github page for full details.",
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',

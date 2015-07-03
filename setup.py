@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="py-eve-chat-mon",
-    version="0.3",
+    version="0.4",
     author="Andrew Martinez",
     author_email="andrew.p.martinez@gmail.com",
     install_requires=[
@@ -12,9 +12,9 @@ setup(
     license="MIT",
     keywords="EVE chat monitor",
     url='https://github.com/andrewpmartinez/py-eve-chat-mon',
-    download_url='https://github.com/andrewpmartinez/py-eve-chat-mon/tarball/0.3',
+    download_url='https://github.com/andrewpmartinez/py-eve-chat-mon/tarball/0.',
     packages=find_packages(),
-    long_description="See github page for full details.",
+    long_description="See github page for full details.",4
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',

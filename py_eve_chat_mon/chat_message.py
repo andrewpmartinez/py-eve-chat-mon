@@ -2,8 +2,8 @@ import re
 from datetime import datetime
 from hashlib import md5
 
-def hash(str):
-    return md5.hash(message).hexdigest()
+def hash(message):
+    return md5(message.encode()).hexdigest()
 
 
 def parse_msg(msg):

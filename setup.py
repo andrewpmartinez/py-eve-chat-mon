@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="py-eve-chat-mon",
-    version="0.4",
+    version="0.5",
     author="Andrew Martinez",
     author_email="andrew.p.martinez@gmail.com",
     install_requires=[

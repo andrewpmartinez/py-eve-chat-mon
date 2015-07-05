@@ -19,8 +19,10 @@ class Monitor:
         if not self.is_alive:
             raise InvalidMonitorState("Monitor not started")
         self.is_alive = False
-        self.thread.stop()
-        self.thread = None
+
+        if self.thread:
+            self.thread.stop()
+            self.thread = None
 
     def start(self):
         if self.is_alive:
@@ -37,9 +39,12 @@ class Monitor:
         while self._should_poll():
             for chat in self.chats:
                 messages = self.chat_log_monitor.read_messages(chat)
+                if messages:
+                    parsed_messages = []
+                    for message in messages:
+                        parsed_messages.append(parse_msg(message))
 
-                for message in messages:
-                    self.handler(chat, parse_msg(message))
+                    self.handler(chat, parsed_messages)
             sleep(self.poll_rate)
 
 

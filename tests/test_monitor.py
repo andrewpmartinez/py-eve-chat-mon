@@ -137,8 +137,8 @@ class TestMonitor(TestCase):
         self._mock_parse_msg.side_effect = ["p1", "p2", "p3", "p4"]
         self._sut.poll()
 
-        calls = [unittest.mock.call(self._chats[0], "p1"), unittest.mock.call(self._chats[0], "p2"),
-                 unittest.mock.call(self._chats[1], "p3"), unittest.mock.call(self._chats[1], "p4")]
+        calls = [unittest.mock.call(self._chats[0], ["p1", "p2"]),
+                 unittest.mock.call(self._chats[1], ["p3", "p4"])]
 
         self._handler.assert_has_calls(calls)
 

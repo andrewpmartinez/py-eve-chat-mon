@@ -19,9 +19,10 @@ Python 3.4.x
 import time
 from py_eve_chat_mon.monitor import Monitor
 
-def handler(chat, msg):
+def handler(chat, messages):
     print(chat)
-    print(msg)
+    for msg in messages:
+        print(msg)
 
 if __name__ == "__main__":
     monitor = Monitor(['Alliance', 'Corp'], 
@@ -57,12 +58,12 @@ The monitor initializer takes in four arguments:
 - `path` - A `str` path to the EVE chat log directory (The default is in the current user's documents folder)
 - `handler` - A callable handler (i.e. a function or any other object that supports the __call__ attribute) that accepts two arguments
  - `chat` - The `str` name of the chat that received a message
- - `msg` - A `dict` representing the chat message
+ - `messages` - An array of  `dict` representing the chat messages
 - `poll_rate` - An optional `int` that represents the seconds to wait between polling intervals on the chat logs. A higher values reduces the responsiveness but lightens the load on the local machines disk I/O
 
-The `msg` dictionary that is passed into the handler has the following attributes:
+The `messages` array contains message dictionaries that have the following attributes:
 
-- `timestamp` - A `datetime` object representing the game time when the message was recieved
+- `timestamp` - A `datetime` object representing the game time when the message was received
 - `message` - A `str` representing the message portion of the chat log (i.e. just the text the user typed)
 - `line` - A `str` representing the entire chat log line (including un-parsed timestamp, username, etc.
 - `username` - A `str` representing the username of the user who sent the message
@@ -80,7 +81,7 @@ It is worth noting that Eve's chat logs are in UTF-16. As such messages and text
 
 ### Polling?
 
-Yes polling. The initial implementation attempted to use `watchdog` to recieve file update events. However, besides the initial creation of the log files, no events are fired in a timely fashion.
+Yes polling. The initial implementation attempted to use `watchdog` to receive file update events. However, besides the initial creation of the log files, no events are fired in a timely fashion.
 
 ### Fun Ideas
 

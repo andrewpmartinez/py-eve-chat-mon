@@ -104,8 +104,6 @@ class EveChatLogDirectoryMonitor(object):
 
         chat_name = get_chat_from_file_name(file_name)
 
-
-
         self.remove_chat_log(chat_name)
 
     def on_create(self, event):

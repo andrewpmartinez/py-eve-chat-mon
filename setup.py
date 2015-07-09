@@ -12,7 +12,7 @@ setup(
     license="MIT",
     keywords="EVE chat monitor",
     url='https://github.com/andrewpmartinez/py-eve-chat-mon',
-    download_url='https://github.com/andrewpmartinez/py-eve-chat-mon/tarball/0.',
+    download_url='https://github.com/andrewpmartinez/py-eve-chat-mon/tarball/0.5',
     packages=find_packages(),
     long_description="See github page for full details.",
     classifiers=[
